@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"D:/OpenGL-Setup-VSCode/test-project/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
