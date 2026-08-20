@@ -14,7 +14,7 @@ Before proceeding, ensure your system meets the following requirements:
 *   **Editor:** Visual Studio Code installed.
 
 ## Installation Steps
-### Install MSYS2 (Compiler for C/C++)
+### A. Install MSYS2 (Compiler for C/C++)
 1. **Install MSYS2** from the [official website](https://msys2.org). Once installed, open the **MSYS2 UCRT64** terminal and run this combined command to install the MinGW-w64 toolchain and CMake:
 ```bash
 pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain mingw-w64-ucrt-x86_64-cmake
@@ -45,23 +45,24 @@ gcc --version
 g++ --version
 gdb --version
 ```
-### Installing C/C++ Extension Pack on Visual Studio Code
+### B. Installing C/C++ and CMake Tools Extension Pack on Visual Studio Code
 1. Open your Visual Studio Code and go to `Extensions` or click `CTRL + SHIFT + X`.
 2. Search for C/C++ and CMake Tools Extension Pack by Microsoft and then install it.
 
-### Install GLFW
+### C. Install GLFW
 1. **Open GLFW** from the [official website](https://www.glfw.org) and go download through this [download link](https://www.glfw.org/download.html). 
 2. Windows users must specifically select the 64-bit pre-compiled binaries package. This specific version is highly required to ensure flawless compatibility with our modern MSYS2 UCRT64 systems.
 3. After the downloading process completes, locate the ZIP file on your local storage. You must extract the compressed folder carefully and open the newly extracted directory to view all available files.
 4. Copy the entire `include` folder directly into your dependencies directory. Also, the `lib-mingw-w64` folder and securely copy it into the `dependencies/lib` folders of your projects.
 
-### Install GLAD
+### D. Install GLAD
 1. Go to GLAD [official website](https://glad.dav1d.de/).
 2. Select C/C++ for the **Language**, OpenGL for **Specification**, API gl in **latest version**.
 3. Navigate to the bottom of the webpage and click `Generate`. After the loading completes, you must download the provided ZIP file `glad.zip` and extract it
 4. Copy `include` folder and `src` contents to your dependencies directory.
 
-### Configure tasks.json (If dont use CMake)
+### E. Configure 
+#### tasks.json (If don't use CMake or Manual Build)
 1. Create a .cpp file (for example, test-glfw.cpp). Go to `Terminal` > `Configure Default Build Task` > and select `C/C++ g++.exe build active`. It will generate `tasks.json` file inside `.vscode` directory in your project directory.
 2. Open `tasks.json` and update the `args` array to match your local setup. Here is the breakdown of what each flag does:
    * `-I`: Points to your project's `include` directory.
@@ -85,7 +86,7 @@ gdb --version
 ]
 ```
 
-### If Using CMake and Run the file
+#### If Using CMake and Run the file
 1. Create a plain text file `CMakeLists.txt` in your project root directory and fill it with this configuration:
 ```cmake
 # Specify the minimum required version of CMake
@@ -120,14 +121,14 @@ target_link_libraries(name_executable glfw3 opengl32 gdi32)
 
 ![Build and Play](images/bottom-bar-vscode.png)
 
-### Testing GLFW and GLAD (Not using CMake or Manual Build)
+### F. Testing GLFW and GLAD (Not using CMake or Manual Build)
 1. **Test GLFW:** You can use the [Example code](https://www.glfw.org/documentation.html) directly from the official GLFW documentation to ensure your windowing system works.
 2. **Test GLAD & OpenGL:** To verify your graphics loader, use the standard [Hello Triangle code](https://learnopengl.com/code_viewer_gh.php?code=src/1.getting_started/2.1.hello_triangle/hello_triangle.cpp) provided by the LearnOpenGL website.
 3. **Preparation:** Always ensure that your source code is saved with a `.cpp` file extension.
 4. **Compilation:** Open your `.cpp` file in the editor, then compile it by navigating to `Run` > `Run Without Debugging` in the top menu (this will execute the `tasks.json` we configured earlier).
 5. **Expected Output:** Upon a successful build, an `.exe` file will be generated. Running the GLFW test code will display a blank window. Meanwhile, the GLAD test code will successfully render a bright orange triangle on a dark green background.
 
-### Expected Output (with CMake and Manual Build)
+### G. Expected Output (with CMake and Manual Build)
 #### GLFW Output
 ![GLFW](images/test-glfw.png)
 
@@ -136,7 +137,7 @@ target_link_libraries(name_executable glfw3 opengl32 gdi32)
 
 ## 📂 Project Structure
 To avoid errors, ensure your project directory matches this exact structure. We use a local `dependencies` folder to isolate the library from the global system:
-
+```text
 > 📁 Your_Project_Name
 > ├── 📁 dependencies
 > │   ├── 📁 include
@@ -154,3 +155,4 @@ To avoid errors, ensure your project directory matches this exact structure. We 
 > │   └── 📄 launch.json
 > ├── 📄 CMakeLists.txt (For automated builds)
 > └── 📄 name-file.cpp
+```
