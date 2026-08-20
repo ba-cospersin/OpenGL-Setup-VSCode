@@ -2,6 +2,8 @@
 
 Welcome to this repository! This guide provides a straightforward, logical approach to setting up a modern Computer Graphics environment using OpenGL, GLFW, and GLAD in Visual Studio Code especially in Windows.
 
+**See my tutorial video on [Youtube](https://youtu.be/3IoeYTy4Vks)**
+
 ## What is OpenGL, GLFW, and GLAD?
 - **OpenGL (Open Graphics Library):** This is not a library or a complete program, but purely a "rulebook" or standard specification. OpenGL only contains mathematical functions for drawing graphics, but it is "blind" to your computer's operating system.
 - **GLFW (Graphics Library Framework):** This is an actual library (a collection of assembled C codes). Since OpenGL does not know how to create application windows or read keyboard inputs on Windows, GLFW steps in to take over this task. It creates an empty canvas (window) and captures your keystrokes so OpenGL has a medium to draw on.
@@ -133,7 +135,7 @@ target_link_libraries(name_executable glfw3 opengl32 gdi32)
 ![GLFW](images/test-glfw.png)
 
 #### GLAD Output
-![GLAD](images/test-glad.png)
+![GLAD](images/test-glad1.png)
 
 ## 📂 Project Structure
 To avoid errors, ensure your project directory matches this exact structure. We use a local `dependencies` folder to isolate the library from the global system:
@@ -153,6 +155,6 @@ To avoid errors, ensure your project directory matches this exact structure. We 
 > ├── 📁 .vscode (For manual configuration)
 > │   ├── 📄 tasks.json
 > │   └── 📄 launch.json
-> ├── 📄 CMakeLists.txt (For automated builds)
+> ├── 📄 CMakeLists.txt (For automated builds) # Optional
 > └── 📄 name-file.cpp
 ```
