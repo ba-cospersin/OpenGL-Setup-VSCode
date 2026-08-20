@@ -1,4 +1,4 @@
-# OpenGL & GLFW Setup Guide for VS Code (WINDOWS)
+# OpenGL GLFW & GLAD Setup Guide for VS Code (WINDOWS)
 
 Welcome to this repository! This guide provides a straightforward, logical approach to setting up a modern Computer Graphics environment using OpenGL, GLFW, and GLAD in Visual Studio Code especially in Windows.
 
@@ -18,14 +18,23 @@ pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
 2. Configure Environment Variables
     - Open the Windows Search bar and type `Edit the System Environment Variables`, then press Enter.
     - Click the `Environment Variables` button at the bottom.
+    
     ![Environment Variables](images/environment-variables.png)
+    
     - In your `User Variables`, select the `Path` variable and the select `Edit` or double click it
+
     ![User Variables](images/environment-variables2.png)
+
     - Select `New` and add the ucrt64 bin folder path to the list. The default path should be: `C:\msys64\ucrt64\bin`, unless you change the installation path during MSYS2 installation setup.
+
     ![Edit Path](images/edit-path.png)
+
     - Select `OK`, and then select `OK` again in the `Environment Variables` window to update the `PATH` environment variable. You have to reopen any console windows for the updated `PATH` environment variable to be available.
+    
     ![Select OK1](images/env-var3.png)
+
     ![Select OK2](images/env-var4.png)
+
 3. Open a fresh Command Prompt (CMD) or PowerShell window and run the following commands to verify that the compiler and debugger are successfully installed:
 ```bash
 gcc --version
