@@ -1,0 +1,14 @@
+[
+{
+  "directory": "D:/OpenGL-Setup-VSCode/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\c++.exe -ID:/OpenGL-Setup-VSCode/test-project/dependencies/include -g -o CMakeFiles\\name_executable.dir\\test-glad.cpp.obj -c D:\\OpenGL-Setup-VSCode\\test-project\\test-glad.cpp",
+  "file": "D:/OpenGL-Setup-VSCode/test-project/test-glad.cpp",
+  "output": "D:/OpenGL-Setup-VSCode/build/CMakeFiles/name_executable.dir/test-glad.cpp.obj"
+},
+{
+  "directory": "D:/OpenGL-Setup-VSCode/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\cc.exe -ID:/OpenGL-Setup-VSCode/test-project/dependencies/include -g -o CMakeFiles\\name_executable.dir\\dependencies\\src\\glad.c.obj -c D:\\OpenGL-Setup-VSCode\\test-project\\dependencies\\src\\glad.c",
+  "file": "D:/OpenGL-Setup-VSCode/test-project/dependencies/src/glad.c",
+  "output": "D:/OpenGL-Setup-VSCode/build/CMakeFiles/name_executable.dir/dependencies/src/glad.c.obj"
+}
+]
