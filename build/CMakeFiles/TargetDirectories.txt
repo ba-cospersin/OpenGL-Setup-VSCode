@@ -1,3 +1,0 @@
-D:/OpenGL-Setup-VSCode/build/CMakeFiles/name_executable.dir
-D:/OpenGL-Setup-VSCode/build/CMakeFiles/edit_cache.dir
-D:/OpenGL-Setup-VSCode/build/CMakeFiles/rebuild_cache.dir
